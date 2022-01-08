@@ -12,16 +12,23 @@
 
 <body>
     <div class="container">
-        <header>
-            <div class="title">
+        <header class="header">
+            <div class="header__title">
                 <h1>calc</h1>
             </div>
-            <div class="theme">
-                <div class="theme__label">THEME</div>
-                <div class="theme__options">
-                    <input type="radio" name="theme" id="light">
-                    <input type="radio" name="theme" id="dark">
-                    <input type="radio" name="theme" id="violet">
+            <div class="header__theme-container">
+                <div class="header__theme-container__theme-label">THEME</div>
+                <div class="header__theme-container__theme-options">
+                    <div class="header__theme-container__theme-options__labels">
+                        <label for="dark" class="header__theme-container__theme-options__labels__label">1</label>
+                        <label for="light" class="header__theme-container__theme-options__labels__label">2</label>
+                        <label for="violet" class="header__theme-container__theme-options__labels__label">3</label>
+                    </div>
+                    <div class="header__theme-container__theme-options__radios">
+                        <input type="radio" name="theme" id="dark" class="header__theme-container__theme-options__radios__radio">
+                        <input type="radio" name="theme" id="light" class="header__theme-container__theme-options__radios__radio">
+                        <input type="radio" name="theme" id="violet" class="header__theme-container__theme-options__radios__radio">
+                    </div>
                 </div>
             </div>
         </header>
@@ -51,8 +58,8 @@
                 <button class="buttons__button">/</button>
                 <button class="buttons__button">x</button>
                 <!-- 5th row -->
-                <button class="buttons__button">RESET</button>
-                <button class="buttons__button">=</button>
+                <button class="buttons__button buttons__button--in-last-row">RESET</button>
+                <button class="buttons__button buttons__button--in-last-row">=</button>
             </div>
         </main>
     </div>

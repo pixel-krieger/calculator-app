@@ -1,5 +1,72 @@
 @import 'variables';
 
 body {
+    margin: 0px;
+    // min-height: 100vh;
     background-color: $gray-100;
+}
+
+.container {
+    min-width: 250px;
+    max-width: 500px;
+    margin: auto;
+    padding: 1rem;
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%,-50%);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    &__theme-container {
+        &__theme-label, &__theme-options {
+            display: inline-block;
+        }
+        &__theme-label {
+            margin-right: 15px;
+        }
+        &__theme-options {
+            &__labels, &__radios {
+                display: flex;
+                justify-content: space-between;
+                min-width: 60px;
+            }
+
+            &__labels {
+                &__label {
+                    display: block;
+                }
+            }
+
+            &__radios {
+                margin-top: 5px;
+
+                &__radio {
+                    margin: 0px;
+                }
+            }
+        }
+    }
+}
+
+.screen {
+    padding: 1.5rem 1rem;
+    background-color: $white;
+}
+
+.buttons {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 1rem;
+
+    &__button {
+        padding: 0.5rem;
+
+        &--in-last-row {
+            grid-column: span 2;
+        }
+    }
 }
