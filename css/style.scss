@@ -24,9 +24,11 @@ body {
         &__theme-label, &__theme-options {
             display: inline-block;
         }
+
         &__theme-label {
             margin-right: 15px;
         }
+
         &__theme-options {
             &__labels, &__radios {
                 display: flex;
@@ -45,6 +47,7 @@ body {
 
                 &__radio {
                     margin: 0px;
+                    width: 12px;
                 }
             }
         }

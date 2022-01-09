@@ -47,6 +47,7 @@ body {
 
 .header__theme-container__theme-options__radios__radio {
   margin: 0px;
+  width: 12px;
 }
 
 .screen {
