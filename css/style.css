@@ -1,5 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap");
 body {
   margin: 0px;
+  font-family: 'Spartan', sans-serif;
   background-color: #E6E6E6;
 }
 
@@ -17,6 +19,16 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.header__title-container__title {
+  margin: 0px;
+  padding: 0px;
+  font-size: 2rem;
+}
+
+.header__theme-container {
+  font-size: 0.8rem;
 }
 
 .header__theme-container__theme-label, .header__theme-container__theme-options {
@@ -53,6 +65,8 @@ body {
 .screen {
   padding: 1.5rem 1rem;
   background-color: #FFFFFF;
+  text-align: right;
+  font-size: 2.2rem;
 }
 
 .buttons {
@@ -66,6 +80,12 @@ body {
 
 .buttons__button {
   padding: 0.5rem;
+  font-family: inherit;
+  font-size: 1.5rem;
+}
+
+.buttons__button--del-reset, .buttons__button--equals {
+  font-size: 0.9em;
 }
 
 .buttons__button--in-last-row {

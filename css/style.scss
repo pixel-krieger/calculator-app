@@ -1,8 +1,10 @@
 @import 'variables';
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
 
 body {
     margin: 0px;
     // min-height: 100vh;
+    font-family: 'Spartan', sans-serif;
     background-color: $gray-100;
 }
 
@@ -20,7 +22,18 @@ body {
 .header {
     display: flex;
     justify-content: space-between;
+
+    &__title-container {
+        &__title {
+            margin: 0px;
+            padding: 0px;
+            font-size: 2rem;
+        }
+    }
+
     &__theme-container {
+        font-size: 0.8rem;
+
         &__theme-label, &__theme-options {
             display: inline-block;
         }
@@ -57,6 +70,8 @@ body {
 .screen {
     padding: 1.5rem 1rem;
     background-color: $white;
+    text-align: right;
+    font-size: 2.2rem;
 }
 
 .buttons {
@@ -67,6 +82,12 @@ body {
 
     &__button {
         padding: 0.5rem;
+        font-family: inherit;
+        font-size: 1.5rem;
+
+        &--del-reset, &--equals {
+            font-size: 0.9em;
+        }
 
         &--in-last-row {
             grid-column: span 2;
