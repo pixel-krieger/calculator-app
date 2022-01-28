@@ -91,7 +91,14 @@ body {
         font-size: 1.5rem;
         border-width: 0px;
         border-radius: 4px;
-        box-shadow: 0px 4px $brown-200;
+        background-color: $brown-100;
+        box-shadow: 0px 4px $brown-400;
+
+        &--del-reset {
+            background-color: $green-100;
+            box-shadow: 0px 4px $green-200;
+            color: $gray-50;
+        }
 
         &--del-reset, &--equals {
             font-size: 0.98em;
