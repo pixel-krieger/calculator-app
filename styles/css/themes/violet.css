@@ -1,0 +1,23 @@
+:root {
+  --background: #17062A;
+  --text: #FBE134;
+  --theme-switcher-bg: #1E0836;
+  --theme-radio: #6DF8EF;
+  --screen-bg: #1E0836;
+  --buttons-div-bg: #1E0836;
+  --button-bg: #331B4D;
+  --button-sh: #871D9F;
+  --del-reset-bg: #560681;
+  --del-reset-sh: #B918F5;
+  --equals-bg: #00DECF;
+  --equals-sh: #6DF8EF;
+}
+
+.buttons__button--del-reset {
+  --text: #FFFFFF;
+}
+.buttons__button--equals {
+  --text: #35372C;
+}
+
+/*# sourceMappingURL=violet.css.map */

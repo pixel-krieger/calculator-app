@@ -1,0 +1,28 @@
+@import 'colors';
+
+:root {
+    --background: #{$slate-200};
+    --text: #{$gray-200};
+    --theme-switcher-bg: #{$slate-400};
+    --theme-radio: #{$red-100};
+    --screen-bg: #{$slate-300};
+    --buttons-div-bg: #{$slate-400};
+    --button-bg: #{$brown-100};
+    --button-sh: #{$brown-300};
+    --del-reset-bg: #{$slate-50};
+    --del-reset-sh: #{$slate-100};
+    --equals-bg: #{$red-100};
+    --equals-sh: #{$red-200};
+}
+
+.header, .screen {
+    --text: #{$white};
+}
+
+.buttons {
+    &__button{
+        &--del-reset, &--equals {
+            --text: #{$white};
+        }
+    }
+}

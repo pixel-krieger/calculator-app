@@ -22,6 +22,7 @@ body {
     display: flex;
     justify-content: space-between;
     margin-bottom: 1.5rem;
+    color: var(--text);
 
     &__title-container {
         &__title {
@@ -70,6 +71,7 @@ body {
 .screen {
     padding: 1.5rem 1rem;
     background-color: var(--screen-bg);
+    color: var(--text);
     text-align: right;
     font-size: 2.2rem;
     margin-bottom: 1.5rem;
@@ -92,6 +94,7 @@ body {
         border-radius: 4px;
         background-color: var(--button-bg);
         box-shadow: 0px 4px var(--button-sh);
+        color: var(--text);
 
         &--del-reset {
             background-color: var(--del-reset-bg);
@@ -101,6 +104,12 @@ body {
 
         &--del-reset, &--equals {
             font-size: 0.98em;
+        }
+
+        &--equals {
+            background-color: var(--equals-bg);
+            box-shadow: 0px 4px var(--equals-sh);
+            color: var(--text);
         }
 
         &--in-last-row {

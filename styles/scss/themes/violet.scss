@@ -1,0 +1,27 @@
+@import 'colors';
+
+:root {
+    --background: #{$violet-600};
+    --text: #{$yellow};
+    --theme-switcher-bg: #{$violet-500};
+    --theme-radio: #{$turquoise-100};
+    --screen-bg: #{$violet-500};
+    --buttons-div-bg: #{$violet-500};
+    --button-bg: #{$violet-400};
+    --button-sh: #{$violet-200};
+    --del-reset-bg: #{$violet-300};
+    --del-reset-sh: #{$violet-100};
+    --equals-bg: #{$turquoise-200};
+    --equals-sh: #{$turquoise-100};
+}
+
+.buttons {
+    &__button{
+        &--del-reset {
+            --text: #{$white};
+        }
+        &--equals {
+            --text: #{$black};
+        }
+    }
+}

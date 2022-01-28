@@ -1,0 +1,24 @@
+:root {
+  --background: #3B4664;
+  --text: #49525d;
+  --theme-switcher-bg: #252D44;
+  --theme-radio: #D13F30;
+  --screen-bg: #181F32;
+  --buttons-div-bg: #252D44;
+  --button-bg: #EAE3DB;
+  --button-sh: #B3A397;
+  --del-reset-bg: #647299;
+  --del-reset-sh: #414E76;
+  --equals-bg: #D13F30;
+  --equals-sh: #94271B;
+}
+
+.header, .screen {
+  --text: #FFFFFF;
+}
+
+.buttons__button--del-reset, .buttons__button--equals {
+  --text: #FFFFFF;
+}
+
+/*# sourceMappingURL=dark.css.map */
