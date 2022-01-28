@@ -1,11 +1,10 @@
-@import 'variables';
 @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
 
 body {
     margin: 0px;
     // min-height: 100vh;
     font-family: 'Spartan', sans-serif;
-    background-color: $gray-100;
+    background-color: var(--background);
 }
 
 .container {
@@ -70,7 +69,7 @@ body {
 
 .screen {
     padding: 1.5rem 1rem;
-    background-color: $gray-50;
+    background-color: var(--screen-bg);
     text-align: right;
     font-size: 2.2rem;
     margin-bottom: 1.5rem;
@@ -82,7 +81,7 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 0.8rem;
-    background-color: $brown-50;
+    background-color: var(--buttons-div-bg);
     border-radius: 8px;
 
     &__button {
@@ -91,13 +90,13 @@ body {
         font-size: 1.5rem;
         border-width: 0px;
         border-radius: 4px;
-        background-color: $brown-100;
-        box-shadow: 0px 4px $brown-400;
+        background-color: var(--button-bg);
+        box-shadow: 0px 4px var(--button-sh);
 
         &--del-reset {
-            background-color: $green-100;
-            box-shadow: 0px 4px $green-200;
-            color: $gray-50;
+            background-color: var(--del-reset-bg);
+            box-shadow: 0px 4px var(--del-reset-sh);
+            color: var(--text);
         }
 
         &--del-reset, &--equals {

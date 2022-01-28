@@ -1,0 +1,20 @@
+:root {
+  --background: #E6E6E6;
+  --text: #35372C;
+  --theme-switcher-bg: #EAE3DB;
+  --theme-radio: #C85401;
+  --screen-bg: #EEEEEE;
+  --buttons-div-bg: #E5E4E0;
+  --button-bg: #D3CDCD;
+  --button-sh: #A99D92;
+  --del-reset-bg: #388187;
+  --del-reset-sh: #1A5F66;
+  --equals-bg: #C85401;
+  --equals-sh: #8B3901;
+}
+
+.buttons__button--del-reset, .buttons__button--equals {
+  --text: #EEEEEE;
+}
+
+/*# sourceMappingURL=light.css.map */

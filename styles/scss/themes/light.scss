@@ -1,0 +1,24 @@
+@import 'colors';
+
+:root {
+    --background: #{$gray-100};
+    --text: #{$black};
+    --theme-switcher-bg: #{$brown-100};
+    --theme-radio: #{$orange-100};
+    --screen-bg: #{$gray-50};
+    --buttons-div-bg: #{$brown-50};
+    --button-bg: #{$brown-200};
+    --button-sh: #{$brown-400};
+    --del-reset-bg: #{$green-100};
+    --del-reset-sh: #{$green-200};
+    --equals-bg: #{$orange-100};
+    --equals-sh: #{$orange-200};
+}
+
+.buttons {
+    &__button{
+        &--del-reset, &--equals {
+            --text: #{$gray-50};
+        }
+    }
+}
