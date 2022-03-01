@@ -48,6 +48,7 @@ body {
                 display: flex;
                 justify-content: space-between;
                 min-width: 60px;
+                padding: 5px;
             }
 
             &__labels {
@@ -57,11 +58,13 @@ body {
             }
 
             &__radios {
-                margin-top: 5px;
+                background-color: var(--theme-switcher-bg);
+                border-radius: 10px;
 
                 &__radio {
                     margin: 0px;
                     width: 12px;
+                    background-color: var(--theme-radio);
                 }
             }
         }

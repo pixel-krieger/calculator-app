@@ -36,16 +36,19 @@ body {
   display: flex;
   justify-content: space-between;
   min-width: 60px;
+  padding: 5px;
 }
 .header__theme-container__theme-options__labels__label {
   display: block;
 }
 .header__theme-container__theme-options__radios {
-  margin-top: 5px;
+  background-color: var(--theme-switcher-bg);
+  border-radius: 10px;
 }
 .header__theme-container__theme-options__radios__radio {
   margin: 0px;
   width: 12px;
+  background-color: var(--theme-radio);
 }
 
 .screen {
