@@ -54,6 +54,7 @@ body {
             &__labels {
                 &__label {
                     display: block;
+                    cursor: pointer;
                 }
             }
 
@@ -62,9 +63,17 @@ body {
                 border-radius: 10px;
 
                 &__radio {
+                    -webkit-appearance: none;
+                    appearance: none;
                     margin: 0px;
                     width: 12px;
-                    background-color: var(--theme-radio);
+                    height: 12px;
+                    border-radius: 50%;
+                    background-color: transparent;
+                    cursor: pointer;
+                    &:checked{
+                        background-color: var(--theme-radio);
+                    }
                 }
             }
         }

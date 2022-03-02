@@ -40,14 +40,23 @@ body {
 }
 .header__theme-container__theme-options__labels__label {
   display: block;
+  cursor: pointer;
 }
 .header__theme-container__theme-options__radios {
   background-color: var(--theme-switcher-bg);
   border-radius: 10px;
 }
 .header__theme-container__theme-options__radios__radio {
+  -webkit-appearance: none;
+  appearance: none;
   margin: 0px;
   width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+}
+.header__theme-container__theme-options__radios__radio:checked {
   background-color: var(--theme-radio);
 }
 
