@@ -12,13 +12,14 @@ radios.forEach(radio => radio.addEventListener("change", () => {
 
 let buttons = document.querySelectorAll('.buttons__button');
 let screenLabel = document.getElementById("screen__text");
+let displayingResult = false;
 
 buttons.forEach(button => {
 
     // if the button contains a number (1-9) or an operation symbol (/,x,-,+)
     if (/^[\d\.\/x\-\+]$/.test(button.textContent)) {
         button.addEventListener("click", () => {
-            if (screenLabel.textContent == "0") {
+            if (screenLabel.textContent == "0" || displayingResult) {
                 screenLabel.textContent = button.textContent;
             } else {
                 screenLabel.textContent += button.textContent;
@@ -32,12 +33,14 @@ buttons.forEach(button => {
                 screenLabel.textContent = screenLabel.textContent.substring(0, screenLabel.textContent.length - 1);
             } else {
                 screenLabel.textContent = "0";
+                displayingResult = false;
             }
         });
 
     } else if (button.textContent == "RESET") {
         button.addEventListener("click", () => {
             screenLabel.textContent = "0";
+            displayingResult = false;
         });
 
     } else if (button.textContent == "=") {
@@ -48,6 +51,7 @@ buttons.forEach(button => {
             } else {
                 screenLabel.textContent = "Error";
             }
+            displayingResult = true;
         });
     }
 });
