@@ -2,20 +2,20 @@
 
 body {
     margin: 0px;
-    // min-height: 100vh;
     font-family: 'Spartan', sans-serif;
     background-color: var(--background);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container {
+    box-sizing: border-box;
     min-width: 250px;
     max-width: 500px;
-    margin: auto;
+    width: 100%;
     padding: 1rem;
-    // position: absolute;
-    // top: 50%;
-    // left: 50%;
-    // transform: translate(-50%,-50%);
 }
 
 .header {
