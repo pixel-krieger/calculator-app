@@ -13,7 +13,7 @@
   --equals-sh: #94271B;
 }
 
-.header, .screen {
+.header, .screen, footer {
   --text: #FFFFFF;
 }
 
