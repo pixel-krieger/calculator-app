@@ -43,8 +43,8 @@ buttons.forEach(button => {
     } else if (button.textContent == "=") {
         button.addEventListener("click", () => {
             // validates syntax of the ecuation
-            if (/^\d+([\/x\+\-]\d+)+$/.test(screenLabel.textContent) || /^\d+$/.test(screenLabel.textContent)) {
-                screenLabel.textContent = eval(screenLabel.textContent);
+            if (/^-?\d+(\.\d+)?(([-\+\/\*]-?\d+(\.\d+)?)+)?$/.test(screenLabel.textContent.replace(/x/g, "*"))) {
+                screenLabel.textContent = eval(screenLabel.textContent.replace(/x/g, "*"));
             } else {
                 screenLabel.textContent = "Error";
             }
