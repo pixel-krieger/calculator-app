@@ -10,44 +10,40 @@ radios.forEach(radio => radio.addEventListener("change", () => {
 
 // Logic for screen and buttons
 
-let buttons = document.querySelectorAll('.buttons__button');
+let buttons = document.querySelector('.buttons');
 let screenLabel = document.getElementById("screen__text");
 
-buttons.forEach(button => {
-
-    // if the button contains a number (1-9) or an operation symbol (/,x,-,+)
-    if (/^[\d\.\/x\-\+]$/.test(button.textContent)) {
-        button.addEventListener("click", () => {
+buttons.addEventListener('click', e => {
+    
+    if (e.target.nodeName === 'BUTTON') {
+        // if the button contains a number (1-9) or an operation symbol (/,x,-,+)
+        if (/^[\d\.\/x\-\+]$/.test(e.target.textContent)) {
             if (screenLabel.textContent == "0" || screenLabel.textContent == "Error") {
-                screenLabel.textContent = button.textContent;
+                screenLabel.textContent = e.target.textContent;
             } else {
-                screenLabel.textContent += button.textContent;
+                screenLabel.textContent += e.target.textContent;
             }
 
-        });
 
-    } else if (button.textContent == "DEL") {
-        button.addEventListener("click", () => {
+        } else if (e.target.textContent == "DEL") {
             if (screenLabel.textContent.length > 1 && screenLabel.textContent !== "Error") {
                 screenLabel.textContent = screenLabel.textContent.substring(0, screenLabel.textContent.length - 1);
             } else {
                 screenLabel.textContent = "0";
             }
-        });
 
-    } else if (button.textContent == "RESET") {
-        button.addEventListener("click", () => {
+        } else if (e.target.textContent == "RESET") {
             screenLabel.textContent = "0";
-        });
 
-    } else if (button.textContent == "=") {
-        button.addEventListener("click", () => {
+        } else if (e.target.textContent == "=") {
             // validates syntax of the ecuation
             if (/^-?\d+(\.\d+)?(([-\+\/\*]-?\d+(\.\d+)?)+)?$/.test(screenLabel.textContent.replace(/x/g, "*"))) {
                 screenLabel.textContent = eval(screenLabel.textContent.replace(/x/g, "*"));
             } else {
                 screenLabel.textContent = "Error";
             }
-        });
+        }
+        
     }
+
 });
