@@ -1,6 +1,6 @@
 // Logic for theme switcher
 
-let radios = document.querySelectorAll('input[name="theme"]');
+const radios = document.querySelectorAll('input[name="theme"]');
 
 radios.forEach(radio => radio.addEventListener("change", () => {
     let themeStylesheet = document.getElementById("theme-stylesheet");
@@ -10,14 +10,17 @@ radios.forEach(radio => radio.addEventListener("change", () => {
 
 // Logic for screen and buttons
 
-let buttons = document.querySelector('.buttons');
-let screenLabel = document.getElementById("screen__text");
+const buttons = document.querySelector('.buttons');
+const screenLabel = document.getElementById("screen__text");
+
+const regexNDS = /^[\d\.\/x\-\+]$/; //regex for number, dot (.) or symbol (/,x,-,+)
+const regexEquation = /^-?\d+(\.\d+)?(([-\+\/\*]-?\d+(\.\d+)?)+)?$/;
 
 buttons.addEventListener('click', e => {
     
     if (e.target.nodeName === 'BUTTON') {
         // if the button contains a number (1-9) or an operation symbol (/,x,-,+)
-        if (/^[\d\.\/x\-\+]$/.test(e.target.textContent)) {
+        if (regexNDS.test(e.target.textContent)) {
             if (screenLabel.textContent == "0" || screenLabel.textContent == "Error") {
                 screenLabel.textContent = e.target.textContent;
             } else {
@@ -37,7 +40,7 @@ buttons.addEventListener('click', e => {
 
         } else if (e.target.textContent == "=") {
             // validates syntax of the ecuation
-            if (/^-?\d+(\.\d+)?(([-\+\/\*]-?\d+(\.\d+)?)+)?$/.test(screenLabel.textContent.replace(/x/g, "*"))) {
+            if (regexEquation.test(screenLabel.textContent.replace(/x/g, "*"))) {
                 screenLabel.textContent = eval(screenLabel.textContent.replace(/x/g, "*"));
             } else {
                 screenLabel.textContent = "Error";
