@@ -19,34 +19,50 @@ const regexEquation = /^-?\d+(\.\d+)?(([-\+\/\*]-?\d+(\.\d+)?)+)?$/;
 buttons.addEventListener('click', e => {
     
     if (e.target.nodeName === 'BUTTON') {
-        // if the button contains a number (1-9) or an operation symbol (/,x,-,+)
+        // if the button contains a number or an operation symbol (/,x,-,+)
         if (regexNDS.test(e.target.textContent)) {
-            if (screenLabel.textContent == "0" || screenLabel.textContent == "Error") {
-                screenLabel.textContent = e.target.textContent;
+            if (getScreenText() == "0" || getScreenText() == "Error") {
+                replaceScreenText(e.target.textContent);
             } else {
-                screenLabel.textContent += e.target.textContent;
+                concatToScreenText(e.target.textContent);
             }
 
 
         } else if (e.target.textContent == "DEL") {
-            if (screenLabel.textContent.length > 1 && screenLabel.textContent !== "Error") {
-                screenLabel.textContent = screenLabel.textContent.substring(0, screenLabel.textContent.length - 1);
+            if (getScreenText().length > 1 && getScreenText() !== "Error") {
+                let textWithoutLastChar = getScreenText().substring(0, getScreenText().length - 1);
+
+                replaceScreenText(textWithoutLastChar);
             } else {
-                screenLabel.textContent = "0";
+                replaceScreenText("0");
             }
 
         } else if (e.target.textContent == "RESET") {
-            screenLabel.textContent = "0";
+            replaceScreenText("0");
 
         } else if (e.target.textContent == "=") {
+            let formattedEquation = getScreenText().replace(/x/g, "*");
+
             // validates syntax of the ecuation
-            if (regexEquation.test(screenLabel.textContent.replace(/x/g, "*"))) {
-                screenLabel.textContent = eval(screenLabel.textContent.replace(/x/g, "*"));
+            if (regexEquation.test(formattedEquation)) {
+                replaceScreenText(eval(formattedEquation));
             } else {
-                screenLabel.textContent = "Error";
+                replaceScreenText("Error");
             }
         }
         
     }
 
 });
+
+function getScreenText() {
+    return screenLabel.textContent;
+}
+
+function replaceScreenText(text) {
+    screenLabel.textContent = text;
+}
+
+function concatToScreenText(text) {
+    screenLabel.textContent += text;
+}
