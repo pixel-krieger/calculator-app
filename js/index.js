@@ -16,22 +16,23 @@ const screenLabel = document.getElementById("screen__text");
 const regexNDS = /^[\d\.\/x\-\+]$/; //regex for number, dot (.) or symbol (/,x,-,+)
 const regexEquation = /^-?\d+(\.\d+)?(([-\+\/\*]-?\d+(\.\d+)?)+)?$/;
 
+var isDisplayingResult = false;
+
 buttons.addEventListener('click', e => {
     
     if (e.target.nodeName === 'BUTTON') {
         // if the button contains a number or an operation symbol (/,x,-,+)
         if (regexNDS.test(e.target.textContent)) {
-            if (getScreenText() == "0" || getScreenText() == "Error") {
+            if ((!isNaN(e.target.textContent) && isDisplayingResult) || parseInt(getScreenText()) == "0") {
                 replaceScreenText(e.target.textContent);
             } else {
                 concatToScreenText(e.target.textContent);
             }
-
+            isDisplayingResult = false;
 
         } else if (e.target.textContent == "DEL") {
             if (getScreenText().length > 1 && getScreenText() !== "Error") {
                 let textWithoutLastChar = getScreenText().substring(0, getScreenText().length - 1);
-
                 replaceScreenText(textWithoutLastChar);
             } else {
                 replaceScreenText("0");
@@ -49,6 +50,7 @@ buttons.addEventListener('click', e => {
             } else {
                 replaceScreenText("Error");
             }
+            isDisplayingResult = true;
         }
         
     }
