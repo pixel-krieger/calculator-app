@@ -9,6 +9,7 @@ This is a solution to the [Calculator app challenge on Frontend Mentor](https://
   - [Screenshot](#screenshot)
 - [My process](#my-process)
   - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
   - [Useful resources](#useful-resources)
 - [Author](#author)
 
@@ -35,6 +36,10 @@ Users should be able to:
 - CSS (Custom properties, Flexbox, Grid)
 - [SASS](https://sass-lang.com/) - CSS pre-processor
 - Mobile-first workflow
+
+### What I learned
+
+In this project, I learned how to write regular expressions (regex) and used them to validate strings. Also, I learned how to implement event delegation, which helped me to significantly reduce the number of events in the project and made the project more scalable.
 
 ### Useful resources
 
